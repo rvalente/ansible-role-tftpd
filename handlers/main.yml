@@ -1,2 +1,12 @@
 ---
-# handlers file for tftpd
+- name: restart tftp
+  service:
+    name: tftp
+    state: restarted
+  become: true
+
+- name: restart tftpd-hpa
+  service:
+    name: tftpd-hpa
+    state: restarted
+  become: true
